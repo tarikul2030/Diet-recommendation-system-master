@@ -28,7 +28,7 @@ SECRET_KEY = 'l#()$jrfbxp-k_9!_^!uz(=9u^q6mfp(=2(m_7pu5xw4v@ou8p'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['web-production-3aac.up.railway.app']
+ALLOWED_HOSTS = ['dietai-rr89.onrender.com']
 
 
 # Application definition
@@ -63,7 +63,7 @@ MIDDLEWARE = [
 
 ]
 CORS_ALLOWED_ORIGINS = [
-    "https://web-production-3aac.up.railway.app",
+    "https://dietai-rr89.onrender.com",
     # Add other trusted origins if needed
 ]
 
