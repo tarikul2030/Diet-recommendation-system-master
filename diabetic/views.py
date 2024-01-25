@@ -3,7 +3,7 @@ import numpy as np
 import pickle
 
 # Loading the saved model
-loaded_model = pickle.load(open('staticfiles/data/diabetic.sav', 'rb'))
+loaded_model = pickle.load(open('static/data/diabetic.sav', 'rb'))
 
 # Creating a function for prediction
 
