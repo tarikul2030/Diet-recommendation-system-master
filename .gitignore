@@ -1,0 +1,7 @@
+venv
+api\__pycache__
+diabetic\__pycache__
+fitness_prediction_app\__pycache__
+foodrec\__pycache__
+heart_disease\__pycache__
+recommender\__pycache__
