@@ -1,7 +1,17 @@
-venv
-api\__pycache__
-diabetic\__pycache__
-fitness_prediction_app\__pycache__
-foodrec\__pycache__
-heart_disease\__pycache__
-recommender\__pycache__
+# .gitignore
+
+# Virtual environment
+.venv/
+
+# Compiled Python files
+*.pyc
+*.pyo
+__pycache__/
+
+# Exclude specific directories
+api/__pycache__/
+diabetic/__pycache__/
+fitness_prediction_app/__pycache__/
+foodrec/__pycache__/
+heart_disease/__pycache__/
+recommender/__pycache__/
