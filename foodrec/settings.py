@@ -28,7 +28,11 @@ SECRET_KEY = 'l#()$jrfbxp-k_9!_^!uz(=9u^q6mfp(=2(m_7pu5xw4v@ou8p'
 DEBUG = True
 
 
+<<<<<<< HEAD
 ALLOWED_HOSTS = ["*"]
+=======
+ALLOWED_HOSTS = ['*']
+>>>>>>> 297e5e220059e3b2d96a9414475fe93a6757a8e2
 
 
 # Application definition
