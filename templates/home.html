@@ -1,0 +1,87 @@
+{% extends 'basic.html' %}
+{% block body %}
+{%load static%}
+<div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div style="position: absolute; padding: 200px 0 0 180px; animation: fadein1 2s;">
+                <div>
+                    <h1 class="fitness">
+                        Determine what you want to achieve with your diet, <br>
+                        such as losing weight, maintaining a healthy weight, <br>
+                        or building muscle.
+                        Establishing clear goals will help guide your efforts.
+                    </h1>
+
+
+                </div>
+            </div>
+            <img src="{% static 'images/home1.png' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <div style="position: absolute; padding: 300px 0 0 600px; animation: fadein1 2s;">
+                <div>
+
+                    <h1 style="font-size: 2.9rem; font-weight: bold;">
+                        "It took more than a day to put it on. <br> It will take more than a day to take it off."
+                    </h1>
+                </div>
+            </div>
+            <img src="{% static 'images/home3.png' %}" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'images/home2.png' %}" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+</section>
+<section class="banner2" style="
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 650px 0 50px;
+    display: flex;
+    flex-direction: column;
+    height: 65vh;
+    background-image: url({% static 'images/sl.png' %}) ;">
+    <h4 class="mt-4">
+        Introduction
+    </h4>
+    <p>
+        In today's world, people prioritize their health and lifestyle. However, merely avoiding junk food and
+        exercising is insufficient. A balanced diet, personalized to factors like height, weight, age, and gender, is
+        crucial. It helps maintain a healthy weight, reduces the risk of chronic diseases, and promotes overall
+        well-being. Calories in food provide energy for bodily functions. While the average person requires around 2000
+        calories per day, intake varies based on individual characteristics. By making informed food choices and
+        following a personalized diet plan, individuals can improve their health and well-being. It's important to
+        nourish our bodies properly and stay physically active for a healthy lifestyle.
+    </p>
+</section>
+
+
+<hr>
+
+
+<!-- Bootstrap-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+<script type="text/javascript">
+    window.addEventListener("scroll", function () {
+        var header = document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0);
+    })
+</script>
+
+
+
+
+{%endblock%}

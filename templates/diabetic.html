@@ -1,0 +1,182 @@
+{% extends 'basic.html' %}
+
+{% block body %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}" />
+
+    <title>diabetes prediction </title>
+</head>
+
+<body>
+    {% load static %}
+    <section class="banner1" style="position: relative;
+    width: 100%;
+    height: 105vh;
+    background-size: cover;
+    background-position: center;
+    padding: 200px 0 0 200px;
+    background-image: url({% static 'images/home1.png' %});">
+        <h1>Diabetes prediction </h1>
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label for="Age" class="form-label">Age:</label>
+                <select id="Age" name="Age" class="form-control w-50" required>
+                    <option value="1">Less than 40</option>
+                    <option value="0">Age 50 TO 59</option>
+                    <option value="2">Age 40 To 49</option>
+                    <option value="3">60 or Older</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="Gender" class="form-label">Gender:</label>
+                <select id="Gender" name="Gender" class="form-control w-50" required>
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="Family_Diabetes" class="form-label">Family Diabetes:</label>
+                <select id="Family_Diabetes" name="Family_Diabetes" class="form-control w-50" required>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="highBP" class="form-label">High Blood Pressure:</label>
+                <select id="highBP" name="highBP" class="form-control w-50" required>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="PhysicallyActive" class="form-label">Physically Active:</label>
+                <select id="PhysicallyActive" name="PhysicallyActive" class="form-control w-50" required>
+                    <option value="2">None</option>
+                    <option value="0">One hour or more</option>
+                    <option value="1">Less than half an hour</option>
+                    <option value="3">More than half an hour</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="BMI" class="form-label">BMI (Body Mass Index):</label>
+                <input type="text" id="BMI" name="BMI" class="form-control w-50" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="Smoking" class="form-label">Smoking:</label>
+                <select id="Smoking" name="Smoking" class="form-control w-50" required>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="Alcohol" class="form-label">Alcohol:</label>
+                <select id="Alcohol" name="Alcohol" class="form-control w-50" required>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="Sleep" class="form-label">Sleep Hour:</label>
+                <input type="text" id="Sleep" name="Sleep" class="form-control w-50" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="SoundSleep" class="form-label">Sound Sleep hour:</label>
+                <input type="text" id="SoundSleep" name="SoundSleep" class="form-control w-50" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="RegularMedicine" class="form-label">Regular Medicine:</label>
+                <select id="RegularMedicine" name="RegularMedicine" class="form-control w-50" required>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="JunkFood" class="form-label">Junk Food:</label>
+                <select id="JunkFood" name="JunkFood" class="form-control w-50" required>
+                    <option value="1">very often</option>
+                    <option value="0">Occasionally</option>
+                    <option value="2">often</option>
+                    <option value="3">always</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="Stress" class="form-label">Stress Level:</label>
+                <select id="Stress" name="Stress" class="form-control w-50" required>
+                    <option value="0">sometimes</option>
+                    <option value="1">not at all</option>
+                    <option value="2">very often</option>
+                    <option value="3">always</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="BPLevel" class="form-label">Blood Pressure Level:</label>
+                <select id="BPLevel" name="BPLevel" class="form-control w-50" required>
+                    <option value="1">Normal</option>
+                    <option value="0">High</option>
+                    <option value="2">Low</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="Pregancies" class="form-label">Pregnancies:</label>
+                <input type="text" id="Pregancies" name="Pregancies" class="form-control w-50">
+            </div>
+
+            <div class="mb-3">
+                <label for="Pdiabetes" class="form-label">Previous Diabetes:</label>
+                <select id="Pdiabetes" name="Pdiabetes" class="form-control w-50" required>
+                    <option value="0">None</option>
+                    <option value="1">Yes</option>
+                    <option value="2">No</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="UriationFreq" class="form-label">Urination Frequency:</label>
+                <input type="text" id="UriationFreq" name="UriationFreq" class="form-control w-50" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+
+        {% if diagnosis %}
+        <h3>{{ diagnosis }}</h3>
+        {% endif %}
+        {% endblock %}
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pzjY4+VWidrP7fSz64/Z0jSFFwqINaPT4q9W3U5sRx/sbSTWt4uWX4YmIEJX67j1"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

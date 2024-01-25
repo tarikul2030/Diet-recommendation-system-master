@@ -1,0 +1,143 @@
+{% extends 'basic.html' %}
+
+{% block body %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}" />
+
+    <title>Heart Prediction</title>
+</head>
+
+<body>
+    {% load static %}
+    <section class="banner1" style="position: relative;
+    width: 100%;
+    height: 105vh;
+    background-size: cover;
+    background-position: center;
+    padding: 200px 0 0 200px;
+    background-image: url({% static 'images/home1.png' %});">
+        <h1> Heart Prediction</h1>
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label for="age" class="form-label">The age of the person in years:</label>
+                <input type="text" id="age" name="age" class="form-control w-50" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="sex" class="form-label">The sex of the person:</label>
+                <select id="sex" name="sex" class="form-control w-50" required>
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="cp" class="form-label">Chest pain type:</label>
+                <select id="cp" name="cp" class="form-control w-50" required>
+                    <option value="0">Typical angina</option>
+                    <option value="1">Atypical angina</option>
+                    <option value="2">Non-anginal pain</option>
+                    <option value="3">Asymptomatic</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="trestbps" class="form-label">Resting blood pressure (in mm Hg on admission to the
+                    hospital):</label>
+                <input type="text" id="trestbps" name="trestbps" class="form-control w-50" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="chol" class="form-label">Serum cholesterol level (in mg/dL):</label>
+                <input type="text" id="chol" name="chol" class="form-control w-50" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="fbs" class="form-label">Fasting blood sugar > 120 mg/dL:</label>
+                <select id="fbs" name="fbs" class="form-control w-50" required>
+                    <option value="1">True</option>
+                    <option value="0">False</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="restecg" class="form-label">Resting electrocardiographic results:</label>
+                <select id="restecg" name="restecg" class="form-control w-50" required>
+                    <option value="0">Normal</option>
+                    <option value="1">ST-T wave abnormality</option>
+                    <option value="2">Probable or definite left ventricular hypertrophy by Estes' criteria</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="thalach" class="form-label">Maximum heart rate achieved:</label>
+                <input type="text" id="thalach" name="thalach" class="form-control w-50" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="exang" class="form-label">Exercise-induced angina:</label>
+                <select id="exang" name="exang" class="form-control w-50" required>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="oldpeak" class="form-label">ST depression induced by exercise relative to rest:</label>
+                <input type="text" id="oldpeak" name="oldpeak" class="form-control w-50" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="slope" class="form-label">The slope of the peak exercise ST segment:</label>
+                <select id="slope" name="slope" class="form-control w-50" required>
+                    <option value="0">Downsloping</option>
+                    <option value="1">Flat</option>
+                    <option value="2">Upsloping</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="ca" class="form-label">Number of major vessels colored by fluoroscopy:</label>
+                <input type="text" id="ca" name="ca" class="form-control w-50" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="thal" class="form-label">Thalassemia:</label>
+                <select id="thal" name="thal" class="form-control w-50" required>
+                    <option value="2">Normal</option>
+                    <option value="1">Fixed defect</option>
+                    <option value="3">Reversible defect</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Fitness Level Prediction</button>
+        </form>
+
+        {% if diagnosis %}
+        <h3>{{ diagnosis }}</h3>
+        {% endif %}
+        {% endblock %}
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pzjY4+VWidrP7fSz64/Z0jSFFwqINaPT4q9W3U5sRx/sbSTWt4uWX4YmIEJX67j1"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
