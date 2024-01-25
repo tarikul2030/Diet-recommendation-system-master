@@ -28,12 +28,7 @@ SECRET_KEY = 'l#()$jrfbxp-k_9!_^!uz(=9u^q6mfp(=2(m_7pu5xw4v@ou8p'
 DEBUG = True
 
 
-CORS_ALLOWED_ORIGINS = [
-    "https://web-production-d5d0.up.railway.app",
-    # Add other trusted origins if needed
-]
-
-ALLOWED_HOSTS = ['web-production-d5d0.up.railway.app']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -119,6 +114,7 @@ STATIC_URL = '/static/'
 
 # added manually
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static"
-]
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

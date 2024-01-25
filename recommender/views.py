@@ -9,7 +9,7 @@ from recommender.models import Food
 
 def index(request):
     if request.method == "POST":
-        # df=pd.read_csv(os.path.join(BASE_DIR ,"static/data/newfood.csv"))
+        # df=pd.read_csv(os.path.join(BASE_DIR ,"staticfiles/data/newfood.csv"))
         # df=df.to_numpy()
         # for d in df:
         #    s=Food(name=d[0],bf=d[1],lu=d[2],di=d[3],cal=d[5],fat=d[6],pro=d[7],sug=d[15],imagepath=d[16])

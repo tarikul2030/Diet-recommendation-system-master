@@ -12,7 +12,7 @@ import pickle
 from foodrec.settings import BASE_DIR
 
 # Loading the saved model
-loaded_model = pickle.load(open('static/data/active1.sav', 'rb'))
+loaded_model = pickle.load(open('staticfiles/data/active1.sav', 'rb'))
 
 
 class FitnessPredictionAPI(APIView):
