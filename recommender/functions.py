@@ -14,7 +14,7 @@ from sklearn.ensemble import RandomForestClassifier
 from foodrec.settings import BASE_DIR
 
 
-data = pd.read_csv(os.path.join(BASE_DIR, "staticfiles/data/food.csv"))
+data = pd.read_csv(os.path.join(BASE_DIR, "static/data/food.csv"))
 Breakfastdata = data['Breakfast']
 BreakfastdataNumpy = Breakfastdata.to_numpy()
 
@@ -145,7 +145,7 @@ def Weight_Loss(age, weight, height):
     inp = []
     # Reading of the Dataet
     datafin = pd.read_csv(os.path.join(
-        BASE_DIR, "staticfiles/data/nutrition_distriution.csv"))
+        BASE_DIR, "static/data/nutrition_distriution.csv"))
 
     # train set
     dataTog = datafin.T
@@ -370,7 +370,7 @@ def Weight_Gain(age, weight, height):
     inp = []
     # Reading of the Dataet
     datafin = pd.read_csv(os.path.join(
-        BASE_DIR, "staticfiles/data/nutrition_distriution.csv"))
+        BASE_DIR, "static/data/nutrition_distriution.csv"))
     # datafin.head(5)
 
     dataTog = datafin.T
@@ -580,7 +580,7 @@ def Healthy(age, weight, height):
     inp = []
     # Reading of the Dataet
     datafin = pd.read_csv(os.path.join(
-        BASE_DIR, "staticfiles/data/nutrition_distriution.csv"))
+        BASE_DIR, "static/data/nutrition_distriution.csv"))
     datafin.head(5)
 
     dataTog = datafin.T

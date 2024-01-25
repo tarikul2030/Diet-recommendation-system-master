@@ -28,7 +28,7 @@ SECRET_KEY = 'l#()$jrfbxp-k_9!_^!uz(=9u^q6mfp(=2(m_7pu5xw4v@ou8p'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['web-production-d5d0.up.railway.app']
+ALLOWED_HOSTS = ['web-production-3aac.up.railway.app']
 
 
 # Application definition
@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'diabetic',
     'rest_framework',
     'api',
-    
+
 ]
 
 MIDDLEWARE = [
@@ -57,7 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
+
 ]
 
 ROOT_URLCONF = 'foodrec.urls'
