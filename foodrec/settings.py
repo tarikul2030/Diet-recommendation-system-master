@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'diabetic',
     'rest_framework',
     'api',
+    'corsheaders',
 
 ]
 
@@ -57,7 +58,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 
+]
+CORS_ALLOWED_ORIGINS = [
+    "https://web-production-3aac.up.railway.app",
+    # Add other trusted origins if needed
 ]
 
 ROOT_URLCONF = 'foodrec.urls'
